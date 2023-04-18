@@ -14,6 +14,9 @@ workflow in N. Virginia Region\
 --> Delete Volumes (if any)
 
 #Assignment starts..\
+# EC2--->
+Amazon Elastic Compute Cloud (EC2) is a part of Amazon.com's cloud-computing platform, Amazon Web Services (AWS), that allows users to rent virtual computers on which to run their own computer applications. EC2 encourages scalable deployment of applications by providing a web service through which a user can boot an Amazon Machine Image (AMI) to configure a virtual machine, which Amazon calls an "instance", containing any software desired. A user can create, launch, and terminate server-instances as needed, paying by the second for active servers – hence the term "elastic". EC2 provides users with control over the geographical location of instances that allows for latency optimization and high levels of redundancy.\
+
 1. login into the AWS console and search for ec2 or In the console go to service and choose ec2.\
 2. From there go to or choose LAUNCH INSTANCE.
  <img width="1278" alt="Screenshot 2023-04-18 at 10 58 18 PM" src="https://user-images.githubusercontent.com/88605079/232866081-e10a1ccd-877a-4c35-b4c3-bbeb5cb5faff.png">
@@ -156,6 +159,7 @@ if you would like to launch an instance with the exact same data (basically a cl
 8. after getting connected within few seconds you will get the screen like this with the server details on the right top.\
 
 <img width="1280" alt="Screenshot 2023-04-19 at 1 49 27 AM" src="https://user-images.githubusercontent.com/88605079/232896890-922a202c-6876-4035-bee0-28ec78ba3bf1.png">
-This ends the ASSIGnment 01.
+This ends the ASSIGnment 01.\
+
 # THANK YOU
 
