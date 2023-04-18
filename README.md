@@ -118,5 +118,44 @@ if you would like to launch an instance with the exact same data (basically a cl
 
 
 ### Lab Challenge: Launch a windows instance using the 7 step flow and login to it.
+1. go to instance --> launch instace ...\
+(give name)\
+<img width="1269" alt="Screenshot 2023-04-19 at 1 22 42 AM" src="https://user-images.githubusercontent.com/88605079/232890436-0c1db0ad-1461-4754-a2f8-f5aaaa493881.png">
+2. select windows ami..\
+<img width="1269" alt="Screenshot 2023-04-19 at 1 23 17 AM" src="https://user-images.githubusercontent.com/88605079/232890737-30ea5764-4318-4d7e-8930-d03e96c3a036.png">
+3. insance type go with t2.micro as this is free tier avilable and select key pair (if you already have then just select that)\
+<img width="1265" alt="Screenshot 2023-04-19 at 1 26 08 AM" src="https://user-images.githubusercontent.com/88605079/232891104-267fb38b-2098-4051-ab3f-6ee903c0a8f8.png">
+4. network section make note that RDB protocol is open i.e select rdb protocol.\
+<img width="1280" alt="Screenshot 2023-04-19 at 1 29 02 AM" src="https://user-images.githubusercontent.com/88605079/232891710-a171d162-8c3b-4c97-857f-c2ac735651cc.png">
+5. rest keep default or configure according to your prefrence then launch the instance.\
+<img width="1276" alt="Screenshot 2023-04-19 at 1 32 12 AM" src="https://user-images.githubusercontent.com/88605079/232892217-68733c23-9031-44ba-b4ea-4a071464d43f.png">
+ till this point instance is launched now we have to take connection of windows instace./
 
+
+### taking connection of windows instance.
+1. select the windows instace ---> go to connect option --> and then select rdb client.\
+<img width="1280" alt="Screenshot 2023-04-19 at 1 34 44 AM" src="https://user-images.githubusercontent.com/88605079/232892977-536eb828-4ce1-44fd-8689-b5d05361e3ed.png">
+<img width="1231" alt="Screenshot 2023-04-19 at 1 35 07 AM" src="https://user-images.githubusercontent.com/88605079/232893045-851729de-2026-415a-9a9d-d0203822d43f.png">
+
+2. click on get password --> upload the keypair i.e .pem like --->then click on decrypt password. and copy everything like username, password,dns name ,etc.\
+<img width="1269" alt="Screenshot 2023-04-19 at 1 39 59 AM" src="https://user-images.githubusercontent.com/88605079/232893738-07a42838-5e88-457e-b355-a4b0ba596b83.png">
+
+3. now open rdb client (if not then download from google, in case you are mac user then get that from app store).\
+<img width="1280" alt="Screenshot 2023-04-19 at 1 42 29 AM" src="https://user-images.githubusercontent.com/88605079/232894245-836f13b6-c1a4-46f9-ae85-61283a590102.png">
+
+4. click on add pc.\
+<img width="1280" alt="Screenshot 2023-04-19 at 1 42 29 AM" src="https://user-images.githubusercontent.com/88605079/232895917-7ce32fd3-e05a-4124-9c4d-15bec4d76cbd.png">
+5. give public ipv4 and click on add.\
+<img width="1280" alt="Screenshot 2023-04-19 at 1 45 04 AM" src="https://user-images.githubusercontent.com/88605079/232896097-603d43a1-1e43-4de4-b751-2d6e30903ffb.png">
+
+6.then screen will appear like this now select the ip by double clicking on it.\
+<img width="1280" alt="Screenshot 2023-04-19 at 1 45 14 AM" src="https://user-images.githubusercontent.com/88605079/232896298-69eb8526-cb91-4037-969f-7a8411b2ffa4.png">
+
+7.now give the username and passwoed that we get from rdb client and click on continue and then continue.\
+<img width="637" alt="Screenshot 2023-04-19 at 1 45 48 AM" src="https://user-images.githubusercontent.com/88605079/232896594-567f556b-fcfa-47ac-be2b-57a8c41619cd.png">
+8. after getting connected within few seconds you will get the screen like this with the server details on the right top.\
+
+<img width="1280" alt="Screenshot 2023-04-19 at 1 49 27 AM" src="https://user-images.githubusercontent.com/88605079/232896890-922a202c-6876-4035-bee0-28ec78ba3bf1.png">
+This ends the ASSIGnment 01.
+# THANK YOU
 
