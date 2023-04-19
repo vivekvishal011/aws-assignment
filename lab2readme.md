@@ -141,6 +141,91 @@ selct ebs volume and go to action and then select force detach option and type d
 
 ### Lab Challenge: Try to login into the instance and create a file (test.txt) in EBS volume
 
+1. Launch a ec2 instance from the 7step flow\
+<img width="1280" alt="Screenshot 2023-04-20 at 12 57 44 AM" src="https://user-images.githubusercontent.com/88605079/233179939-dd8b6aef-c437-4cb0-8938-ccf639ce4439.png">
+
+2. Go to elastic block storage and choose volume there click on create volume\
+<img width="1277" alt="Screenshot 2023-04-20 at 1 01 07 AM" src="https://user-images.githubusercontent.com/88605079/233180595-337655d7-1075-4302-aa33-c3150a9cc87e.png">
+
+3. THERE according to your need select Volume type, Size (GiB), Availability Zone, Tags - optional, etc and click on create volume\
+<img width="1280" alt="Screenshot 2023-04-20 at 1 04 00 AM" src="https://user-images.githubusercontent.com/88605079/233181256-caad33c0-8c20-4ade-9cbb-16077fc02c38.png">
+<img width="1275" alt="Screenshot 2023-04-20 at 1 04 26 AM" src="https://user-images.githubusercontent.com/88605079/233181285-37abe8aa-c1e9-46b7-b97f-f4fd505ad32b.png">
+
+4. you will find the volume in available state in blue color\
+<img width="1275" alt="Screenshot 2023-04-20 at 1 05 59 AM" src="https://user-images.githubusercontent.com/88605079/233181677-6e6ee6ea-62e6-4800-859a-277bc8ceea8e.png">
+
+
+5. select the volune go to instance and action choose attach volume\
+<img width="1280" alt="Screenshot 2023-04-20 at 1 07 23 AM" src="https://user-images.githubusercontent.com/88605079/233182080-ce4d0b41-b767-4ed4-8565-e07464a0d15d.png">
+6. select the instace to which you want to attach the volume and create volume\
+<img width="1280" alt="Screenshot 2023-04-20 at 1 07 51 AM" src="https://user-images.githubusercontent.com/88605079/233182245-e3907654-b783-4b1d-a0cc-686f17888723.png">
+7. now you will see the volume is in-use state\
+ <img width="1280" alt="Screenshot 2023-04-20 at 1 10 14 AM" src="https://user-images.githubusercontent.com/88605079/233182504-3e1a8879-09ec-4c16-a345-d5c756e8194c.png">
+
+8. now open the terminal and take the ssh of instace that we have launche.( i'm mac user so open the terminal and go to the folder where .pem key is there)\
+use the following command= ssh -i {pem key} ubuntu@public ipv4 [and hit enter] in my case "ssh -i staragile.pem ubuntu@52.66.213.24 -y"\
+--> sudo su\
+--> df -h\
+<img width="575" alt="Screenshot 2023-04-20 at 1 17 48 AM" src="https://user-images.githubusercontent.com/88605079/233183968-388dd3cc-d554-42dc-bf66-e1439c2352aa.png">
+--> lsblk (lists information about all available or the specified block devices.)\
+<img width="577" alt="Screenshot 2023-04-20 at 1 18 48 AM" src="https://user-images.githubusercontent.com/88605079/233184482-f5812e8b-8a35-4068-8418-09694d9ccd01.png">
+
+-->file -s /dev/xvdf (is to create a file system on the volume)\
+<img width="558" alt="Screenshot 2023-04-20 at 1 23 02 AM" src="https://user-images.githubusercontent.com/88605079/233185090-ede586a9-f487-41b4-b5b0-9756d5a0f09a.png">
+
+-->mkfs -t xfs /dev/xvdf(to create xfs file system and internal log on the same disk)\
+<img width="575" alt="Screenshot 2023-04-20 at 1 25 09 AM" src="https://user-images.githubusercontent.com/88605079/233185593-53a6ca12-d7ee-49ba-904e-fb5f382de984.png">
+
+-->file -s /dev/xvdf\
+<img width="568" alt="Screenshot 2023-04-20 at 1 26 49 AM" src="https://user-images.githubusercontent.com/88605079/233185918-05f400eb-e121-4089-a872-d5ef9ab239be.png">
+
+
+-->> mkdir -p /apps/volume/new-volume\
+<img width="575" alt="Screenshot 2023-04-20 at 1 28 01 AM" src="https://user-images.githubusercontent.com/88605079/233186195-aedd55ea-f1ce-4158-b358-693e58672083.png">
+
+-->> mount /dev/xvdf /apps/volume/new-volume\
+<img width="579" alt="Screenshot 2023-04-20 at 1 29 11 AM" src="https://user-images.githubusercontent.com/88605079/233186438-088d8f85-8ecc-42ba-a18d-96f72d67aa8b.png">
+
+-->>df -h\
+--> cd /apps/volume/new-volume/( now here we can make file,dir or store any thing)\
+<img width="578" alt="Screenshot 2023-04-20 at 1 33 56 AM" src="https://user-images.githubusercontent.com/88605079/233187722-e9c9318a-a340-4008-8869-d241cc3faab4.png">
+
+-->> nano vishal(nano is a file editor an dvishal is file name)\
+--> to read content in file i used this command :- cat vishal\
+<img width="574" alt="Screenshot 2023-04-20 at 1 37 08 AM" src="https://user-images.githubusercontent.com/88605079/233188349-bd61ebad-adaa-4f16-98bc-4a4f57c1a256.png">
+ 
+ 
+ ==> 1. unmount the ebs for that use this command = umount /dev/xvdf /apps/volume/new-volume\
+ <img width="572" alt="Screenshot 2023-04-20 at 1 43 36 AM" src="https://user-images.githubusercontent.com/88605079/233191172-d4d77c31-972d-4d04-b349-18154385d015.png">
+
+==> 2. detach the ebs from the instance\
+==> 3. stop the instance to avoid billing\
+==> 4. create the another instance\
+==> 5. Attached the ebs to the new instance\
+==> 6. use "lsblk", "file -s /dev/xvdf", "mkdir -p /apps/volume/new-volume", "mount /dev/xvdf /apps/volume/new-volume"( each command is explained above)\
+<img width="568" alt="Screenshot 2023-04-20 at 1 48 38 AM" src="https://user-images.githubusercontent.com/88605079/233192178-d7805d00-87d1-4611-98d4-2275bffa7f3a.png">
+==>> now go to the place of mount where you created the file earlier (" cd /apps/volume/new-volume/")\
+==>> do ls or cat vishal to see the content, you will find the same content.\
+ <img width="575" alt="Screenshot 2023-04-20 at 1 50 40 AM" src="https://user-images.githubusercontent.com/88605079/233192696-ad234e2a-ff17-4fec-ad7b-04934ef2bfb8.png">
+ --->>> DON'T FORGET TO CLEAN-UP EVERY THINGS.\
+ 
+### This end the assignment 2.
+
+# THANK YOU:-
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
