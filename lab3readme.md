@@ -183,6 +183,20 @@ b. Delete EFS
 
 <img width="1278" alt="Screenshot 2023-04-21 at 12 22 10 AM" src="https://user-images.githubusercontent.com/88605079/233460889-e633a0dc-0f91-4949-975b-a374d7430c23.png">
 
-`This ends the assignment`
+### Treasure hunt: When should I use Amazon EFS vs. Amazon Elastic Block Store (EBS)?
+
+`---->>>> Amazon Elastic File System (EFS) and Amazon Elastic Block Store (EBS) are both storage solutions offered by Amazon Web Services (AWS), but they have different use cases.
+
+Amazon EBS is a block-level storage service designed for use with Amazon Elastic Compute Cloud (EC2) instances. EBS provides persistent storage for data that needs to be accessed by a single EC2 instance at a time. EBS volumes can be attached and detached from EC2 instances, and they can be used as the boot volume for an instance.
+
+On the other hand, Amazon EFS is a file system storage service designed for use with multiple EC2 instances. EFS provides a shared file system that can be accessed concurrently by multiple EC2 instances, which makes it ideal for workloads that require shared access to data, such as content management systems, web servers, and data analytics applications.
+
+So, if you need a file system that can be accessed concurrently by multiple EC2 instances, Amazon EFS would be the better choice. If you need persistent storage for a single EC2 instance, Amazon EBS would be the better choice.
+
+Amazon EFS is a fully managed, scalable file storage service designed to provide shared access to files for multiple compute instances in the AWS Cloud. It is ideal for use cases such as big data analytics, content management, web serving, and home directories. Amazon EFS can be accessed by multiple Amazon EC2 instances simultaneously, which makes it a great choice for applications that require high levels of concurrency.
+
+On the other hand, Amazon EBS provides block-level storage volumes for use with Amazon EC2 instances. It is designed for applications that require high performance and low latency storage, such as databases, enterprise applications, and transactional workloads. Amazon EBS volumes can only be accessed by a single EC2 instance at a time, which makes it a great choice for applications that require high performance and low latency storage.`
+
+This ends the assignment
 
 # THANK YOU
